@@ -1,0 +1,124 @@
+/*Подключение шрифта*/
+@font-face {
+    font-family: Roboto; /* Название шрифта */
+    src: url(/fonts/Roboto-Regular.ttf); /* Путь к файлу со шрифтом */
+}
+
+/*Тело страницы*/
+body {
+    width: 320px; /*ширина*/
+    min-width: 240px; /*минимальная ширина*/
+}
+
+/*Шапка календаря*/
+.header {
+    padding: 8px 20px; /*внутренние отступы*/
+    display: flex; /*flexbox резиновый*/
+    justify-content: space-between; /*выравнивание*/
+    align-items: center; /*выравнивание*/
+    position: absolute; /*позиционируем*/
+    width: 280px; /*ширина*/
+    height: 40px; /*высота*/
+    z-index: 7; /*на передний план*/
+    color: #FFFFFF; /*цвет текста*/
+}
+
+/*Название месяца*/
+.month {
+    font-family: Roboto; /*используем подключенный шрифт*/
+    font-style: normal; /*стиль шрифта*/
+    font-weight: 500; /*толщина шрифта*/
+    font-size: 12px; /*размер шрифта*/
+    line-height: 14px; /*межстрочный интервал*/
+}
+
+/*Стрелка влево и вправо*/
+#arrow {
+    font-size: 20px; /*размер стрелок*/
+}
+
+table {
+    position: absolute; /*вбсолютное позиционирование*/
+    z-index: 6; /*на передний план*/
+    color: white; /*цвет текста*/
+    margin-top: 53px; /*внешний отступ сверху*/
+    border-spacing: 0 0.5em; /*расстояние между строками*/
+    width: 320px; /*ширина таблицы*/
+    text-align: center; /*выравнивание по центру*/
+}
+
+td {
+    padding: 6px 5px; /*внутренние отступы*/
+    font-family: Roboto; /*подулюченный шрифт*/
+    font-style: normal; /*стиль шрифта*/
+    font-weight: 500; /*толщина шрифта*/
+    font-size: 12px; /*размер шрифта*/
+    line-height: 24px; /*межстрочный интервал*/
+}
+
+.calend1 tr:nth-child(1) td:nth-child(2) { /*1 строка 2 ячейка*/
+    border-radius: 100px 0 0 100px; /*закругление*/
+}
+
+.calend1 tr:nth-child(2) td:nth-child(4) { /*2 строка 4 ячейка*/
+    border-radius: 0 100px 100px 0; /*закругление*/
+}
+
+.calend1 tr:nth-child(1) td:nth-child(1n+2) { /*1 строка 2-7 ячейки*/
+    background: #2D9CDB; /*фон*/
+}
+
+.calend1 tr:nth-child(2) td:nth-child(-n+4) { /*2 строка 1-4 ячейки*/
+    background: #2D9CDB; /*фон*/
+}
+
+tr:nth-child(5) td:nth-child(1n+3) { /*5 строка 3-7 ячейки*/
+    color: gray; /*цвет текста*/
+}
+
+/*checkbox*/
+input[type=checkbox] { /*чекбокс*/
+    display: none; /*прячем*/
+}
+
+/*checkbox при клике на день*/
+.calend1 input[type=checkbox]:checked ~ .click { /*при клике на label*/
+    background: #2573a0; /*фон*/
+    border-radius: 100px; /*закругляем*/
+}
+
+.calend2 input[type=checkbox]:checked ~ .click { /*при клике на label*/
+    background: #2573a0; /*фон*/
+    border-radius: 100px; /*закругляем*/
+    border: 2px solid; /*бордюр*/
+    border-color: #2D9CDB; /*цвет бордюра*/
+}
+
+.click { /*label*/
+    padding: 9px 10px; /*внутренние отступы*/
+}
+
+/*Черный фон*/
+.bg_black {
+    position: absolute; /*абсолютное позиционирование*/
+    border-radius: 6px; /*закругление*/
+    align-items: center; /*по центру*/
+    justify-content: center; /*выравнивание*/
+    height: 284px; /*высота*/
+    width: 320px; /*ширина*/
+    background: black; /*фон*/
+}
+
+/*Изображение альпака фон*/
+.bg_img {
+    position: absolute; /*абсолютное позиционирование*/
+    opacity: 0.2; /*прозрачность картинки*/
+}
+
+.calend2 { /*средний календарь*/
+    margin-left: 330px;
+}
+
+.calend1 { /*правый*/
+    margin-left: 660px;
+}
